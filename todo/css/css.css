@@ -1,0 +1,101 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: url('../ff.jpg');
+   background-size: cover;
+ background-attachment: fixed;
+  background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 1.5em;
+}
+
+p.info1 {
+    color: yellow;
+}
+
+p.info2 {
+    color: rgb(80, 222, 111);
+}
+
+p.info3 {
+    color: rgb(0, 88, 88);
+}
+
+input#input_tarefa {
+    padding-left: 5px;
+    width: 60vw;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    min-width: 220px;
+}
+
+section#tarefas_adicionadas {
+    margin-top: 10px;
+}
+
+div.box_atividade {
+    width: 64vw;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: rgb(76, 183, 203);
+    margin-bottom: 5px;
+    border: solid 2px rgb(1, 102, 102);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 200ms;
+    box-sizing: contet-box;
+}
+
+p.descricao_atividade {
+    font-family: sans-serif;
+    color: white;
+    font-size: 0.9em;
+}
+
+button.excluir_atividade {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+#add_button{
+    background-color: green;
+    color: rgb(76, 183, 203);
+    border-radius: 3px;
+    border: none;
+    height: 30px;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+div.completado {
+    transition: 200ms;
+    background-color: rgb(80, 222, 111);
+}
+
+div.completado > p {
+    color: green;
+}

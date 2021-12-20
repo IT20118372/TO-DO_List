@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="css/css.css">
+    <script src="script.js"></script>
+    <title>MKBKaushalya-TODO</title>
+	<link rel = "icon" href = 
+"https://res.cloudinary.com/dff4rbfkn/image/upload/ar_1:1,bo_26px_solid_rgb:0e4490,c_fill,g_auto,r_max,w_1000/v1639972581/1259668_original_hadisj.jpg" 
+        type = "image/x-icon">
+		
+			<script src="https://kit.fontawesome.com/938d7bb336.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1><u><i class="fas fa-clipboard-list"></i> TO DO List</u></h1>
+        <p class="info1">(1) Type your task and click "Add To List" button.</p>
+        <p class="info1">(2)Click <i class="far fa-trash-alt"></i> button to remove the task.</p>
+        <p class="info1">(3) Bookmark this page and save</p>
+		<p class="info1">- Kaushalya M.K.B Created - </p>
+    </header>
+<br><br>
+
+    <main>
+        <div id="nova_tarefa">
+            <input id="input_tarefa" type="text" onkeydown="pressEnter(event)" placeholder="Your task..." maxlength="190" required autofocus/>
+            <button id="add_button" onclick="adicionarTarefa()">Add To List</button>
+        </div>
+
+        <section id="tarefas_adicionadas">
+
+        </section>
+    </main>
+<script>
+
+let id = 1;
+
+function construirTarefa() {
+    const nomeAtividade = document.getElementById("input_tarefa").value
+    const tarefa = `<div id="${id}" class="box_atividade" onclick="marcar(this)">
+    <p class="descricao_atividade">${nomeAtividade}</p>
+    <button class="excluir_atividade" onclick="excluir(${id})"><i class="far fa-trash-alt"></i></button>
+    </div>`
+    id += 1
+    return tarefa
+}
+
+function adicionarTarefa() {
+    
+    if(document.getElementById('input_tarefa').value != '' ) {
+        document.getElementById('tarefas_adicionadas').innerHTML += construirTarefa()
+    }
+    document.getElementById("input_tarefa").value = ""
+}
+
+function marcar(element) { 
+    let modo = element.getAttribute('class')
+
+    if(modo.includes('completado')) {
+        element.className = 'box_atividade'
+    }
+    else {
+        element.className = 'box_atividade completado'
+    }
+}
+
+function excluir(id) {
+    let lista_tarefas = document.getElementById('tarefas_adicionadas')
+    let tarefa = document.getElementById(id);
+    lista_tarefas.removeChild(tarefa)
+}
+
+function pressEnter(event) {
+    if(event.keyCode == 13) {
+        document.getElementById('add_button').click()
+        console.log('epa')
+    }
+}
+
+</script>
+</body>
+
+</html>
